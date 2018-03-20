@@ -3,7 +3,7 @@ class Province < ApplicationRecord
 
   validates :code, presence: true
   validates :gst, presence: true
-  validates :gst, only_float: true
+  validates :gst, numericality: { only_float: true }
   validates :pst, presence: true
-  validates :pst, only_float: true
+  validates :pst, numericality: { only_float: true }
 end

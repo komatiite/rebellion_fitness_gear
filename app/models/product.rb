@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :sku, presence: true
   validates :name, presence: true
   validates :quantity, presence: true
-  validates :quantity, only_integer: true
+  validates :quantity, numericality: { only_integer: true }
   validates :price, presence: true
-  validates :price, only_float: true
+  validates :price, numericality: { only_float: true }
 end

@@ -7,7 +7,7 @@ class Customer < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, presence: true
   validates :phone, presence: true
-  validates :phone, only_integer: true
+  validates :phone, numericality: { only_integer: true }
   validates :address, presence: true
   validates :city, presence: true
   validates :province, presence: true
