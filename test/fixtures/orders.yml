@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: 1
+  date: 2018-03-20 21:23:23
+  status: MyString
+  stripeid: MyString
+  gst: 1.5
+  pst: 1.5
+  provinceid: 1
+
+two:
+  customer: 1
+  date: 2018-03-20 21:23:23
+  status: MyString
+  stripeid: MyString
+  gst: 1.5
+  pst: 1.5
+  provinceid: 1
