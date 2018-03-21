@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
+  root 'products#index'
 
-
-  get 'products', to: 'products#index', as: 'products'
+  get 'products', to: 'products#index', as: 'main_page'
   get 'products/:id', to: 'products#view', as: 'product'
 
   get 'products/index'
-
-  get 'products/view'
 
   get 'products/add'
 
