@@ -1,0 +1,7 @@
+<h1>Rebellion Fitness Gear Product Listing</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%= product.name %>, <%= product.price %></li>
+  <% end %>
+</ul>
