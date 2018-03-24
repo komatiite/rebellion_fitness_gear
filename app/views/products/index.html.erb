@@ -2,7 +2,12 @@
 
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
+    <li>
+      <% if product.image.present? %>
+        <p><%= image_tag product.image.thumb.url %></p>
+      <% end %>
+
+      <%= link_to product.name, product_path(product) %></li>
 
   <% end %>
 </ul>
