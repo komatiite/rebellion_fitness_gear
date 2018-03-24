@@ -2,6 +2,10 @@
 
 <p><%= @product.description %></p>
 
+<% if @product.image.present? %>
+  <p><%= image_tag @product.image %></p>
+<% end %>
+
 <h2>Specifications:</h2>
 
 <ul>

@@ -1,6 +1,5 @@
 class Product < ApplicationRecord
   has_and_belongs_to_many :orders
-  has_many :images
   belongs_to :category
 
   validates :sku, presence: true
@@ -9,4 +8,6 @@ class Product < ApplicationRecord
   validates :quantity, numericality: { only_integer: true }
   validates :price, presence: true
   validates :price, numericality: { only_float: true }
+
+  mount_uploader :image, ImageUploader
 end

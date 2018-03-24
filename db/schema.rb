@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321145425) do
+ActiveRecord::Schema.define(version: 20180324051612) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20180321145425) do
     t.string "material"
     t.string "max_weight"
     t.string "finish"
+    t.string "image"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
