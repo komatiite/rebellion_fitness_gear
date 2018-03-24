@@ -1,0 +1,52 @@
+<h1><%= @product.name %></h1>
+
+<p><%= @product.description %></p>
+
+<h2>Specifications:</h2>
+
+<ul>
+  <% if @product.size.present? %>
+    <li>Size: <%= @product.size %></li>
+  <% end %>
+  <% if @product.width.present? %>
+    <li>Width: <%= @product.width %></li>
+  <% end %>
+  <% if @product.length.present? %>
+    <li>Length: <%= @product.length %></li>
+  <% end %>
+  <% if @product.height.present? %>
+    <li>Height: <%= @product.height %></li>
+  <% end %>
+  <% if @product.diameter.present? %>
+    <li>Diameter: <%= @product.diameter %></li>
+  <% end %>
+  <% if @product.volume.present? %>
+    <li>Volume: <%= @product.volume %></li>
+  <% end %>
+  <% if @product.weight.present? %>
+    <li>Weight: <%= @product.weight %></li>
+  <% end %>
+  <% if @product.colour.present? %>
+    <li>Colour: <%= @product.colour %></li>
+  <% end %>
+  <% if @product.material.present? %>
+    <li>Material: <%= @product.material %></li>
+  <% end %>
+  <% if @product.finish.present? %>
+    <li>Finish: <%= @product.finish %></li>
+  <% end %>
+  <% if @product.resistance.present? %>
+    <li>Resistance Level: <%= @product.resistance %></li>
+  <% end %>
+  <% if @product.max_weight.present? %>
+    <li>Maximum Supported Weight: <%= @product.max_weight %></li>
+  <% end %>
+</ul>
+
+
+
+
+
+<p><%= link_to 'Go back to main page', main_page_path %></p>
+
+

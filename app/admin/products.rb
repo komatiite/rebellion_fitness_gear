@@ -12,6 +12,23 @@ ActiveAdmin.register Product do
 #   permitted
 # end
 
-  permit_params :sku, :name, :description, :quantity, :active, :category_id, :price
-
+  permit_params :sku,
+                :name,
+                :description,
+                :quantity,
+                :active,
+                :category_id,
+                :price,
+                :width,
+                :diameter,
+                :height,
+                :length,
+                :weight,
+                :volume,
+                :size,
+                :resistance,
+                :colour,
+                :material,
+                :max_weight,
+                :finish
 end
