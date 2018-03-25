@@ -5,13 +5,7 @@ Rails.application.routes.draw do
   get 'products', to: 'products#index', as: 'main_page'
   get 'products/:id', to: 'products#show', as: 'product'
 
-  get 'products/index'
-
-  get 'products/add'
-
-  get 'products/discard'
-
-  get 'products/buy'
+  get 'categories/:id', to: 'categories#show', as: 'category_page'
 
   get 'about', to: 'abouts#show', as: 'about_page'
 

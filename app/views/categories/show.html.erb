@@ -1,0 +1,13 @@
+<h1>All <%= @category.name %> Products</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <% if product.image.present? %>
+        <p><%= image_tag product.image.thumb.url %></p>
+      <% end %>
+
+      <%= link_to product.name, product_path(product) %></li>
+
+  <% end %>
+</ul>

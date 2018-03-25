@@ -9,12 +9,9 @@
   </head>
 
   <body>
-    <p><%= link_to 'Rebellion Fitness Gear', main_page_path %></p>
-    <p><%= link_to 'About', about_page_path %></p>
-    <p><%= link_to 'Contact', contact_page_path %></p>
+    <%= render "shared/header" %>
+    <%= render "shared/menu", :categories => @categories %>
 
-
-    <p><a href="http://localhost:3000/admin">Admin</a></p>
     <%= yield %>
   </body>
 </html>
