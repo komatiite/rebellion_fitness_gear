@@ -31,5 +31,8 @@ ActiveAdmin.register Product do
                 :material,
                 :max_weight,
                 :finish,
-                :image
+                :image,
+                :new,
+                :sale,
+                :sale_price
 end

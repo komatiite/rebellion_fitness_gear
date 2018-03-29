@@ -1,0 +1,28 @@
+<h2>On Sale</h2>
+
+<ul>
+  <% @sale_products.each do |product| %>
+    <li>
+      <% if product.image.present? %>
+        <p><%= image_tag product.image.thumb.url %></p>
+      <% end %>
+
+      <%= link_to product.name, product_path(product) %></li>
+    <li><strike>$<%= product.price %></strike> <b>$<%= product.sale_price %></b> </li>
+
+  <% end %>
+</ul>
+
+<h2>New Products</h2>
+
+<ul>
+  <% @new_products.each do |product| %>
+    <li>
+      <% if product.image.present? %>
+        <p><%= image_tag product.image.thumb.url %></p>
+      <% end %>
+
+      <%= link_to product.name, product_path(product) %></li>
+
+  <% end %>
+</ul>

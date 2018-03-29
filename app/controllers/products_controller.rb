@@ -11,12 +11,11 @@ class ProductsController < ApplicationController
     @products = Product.where(:category => params[:id])
   end
 
-  def add
+  def main
+    @sale_products = Product.where(:sale => true)
+    @new_products = Product.where(:new => true)
   end
 
-  def discard
-  end
 
-  def buy
-  end
+
 end

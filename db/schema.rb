@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324070117) do
+ActiveRecord::Schema.define(version: 20180329180054) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "title"
@@ -144,6 +144,9 @@ ActiveRecord::Schema.define(version: 20180324070117) do
     t.string "max_weight"
     t.string "finish"
     t.string "image"
+    t.boolean "new"
+    t.boolean "sale"
+    t.float "sale_price"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 

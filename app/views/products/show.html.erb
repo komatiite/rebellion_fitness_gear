@@ -1,6 +1,15 @@
 <h1><%= @product.name %></h1>
 
+<% if @product.sale %>
+  <h2><strike>$<%= @product.price %></strike> <b>$<%= @product.sale_price %></b></h2>
+<% else %>
+  <h2>$<%= @product.price %></strike></h2>
+<% end %>
+
+
 <p><%= @product.description %></p>
+
+
 
 <% if @product.image.present? %>
   <p><%= image_tag @product.image.product_view.url %></p>
