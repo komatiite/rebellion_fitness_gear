@@ -15,7 +15,4 @@ class ProductsController < ApplicationController
     @sale_products = Product.where(:sale => true)
     @new_products = Product.where(:new => true)
   end
-
-
-
 end

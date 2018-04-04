@@ -1,4 +1,11 @@
-<p><%= link_to 'Rebellion Fitness Gear', main_page_path %></p>
+<p><%= link_to image_tag("rebellion_logo.jpg"), main_page_path %></p>
 <p><%= link_to 'About', about_page_path %></p>
 <p><%= link_to 'Contact', contact_page_path %></p>
 <p><a href="http://localhost:3000/admin">Admin</a></p>
+
+<p>
+  <%= form_tag product_search_path, method: :get do %>
+    <%= text_field_tag :search_term, params[:search_term] %>
+    <%= submit_tag "Search", name: nil %>
+  <% end %>
+</p>

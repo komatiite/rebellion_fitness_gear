@@ -10,4 +10,9 @@ class Product < ApplicationRecord
   validates :price, numericality: { only_float: true }
 
   mount_uploader :image, ImageUploader
+
+  def self.search search_term
+    return scoped unless search_term.present?
+    where(['name LIKE ? OR description LIKE ?', "%#{search_term}%", "%#{search_term}%"])
+  end
 end

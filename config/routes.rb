@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'products', to: 'products#index', as: 'index_page'
   get 'products/:id', to: 'products#show', as: 'product'
+  get 'search', to: 'search#index', as: 'product_search'
 
   get 'categories/:id', to: 'categories#show', as: 'category_page'
 

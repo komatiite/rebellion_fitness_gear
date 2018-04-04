@@ -1,7 +1,20 @@
-<ul>
-  <li><%= link_to "All", index_page_path %></li>
-  <% categories.each do |category| %>
-    <li>
-      <%= link_to category.name, category_page_path(category.id) %></li>
-  <% end %>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "All", index_page_path, class: "nav-link" %>
+      </li>
+
+      <% categories.each do |category| %>
+        <li class="nav-item">
+          <%= link_to category.name, category_page_path(category.id), class: "nav-link" %>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
