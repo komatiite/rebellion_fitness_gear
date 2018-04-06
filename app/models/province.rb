@@ -8,7 +8,7 @@ class Province < ApplicationRecord
   validates :pst, presence: true
   validates :pst, numericality: { only_float: true }
 
-  def display_name
-    code
-  end
+  #def display_name
+   # code
+  #end
 end

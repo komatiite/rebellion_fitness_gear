@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329180054) do
+ActiveRecord::Schema.define(version: 20180406165014) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "title"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20180329180054) do
     t.string "lastname"
     t.string "email"
     t.string "password"
-    t.integer "phone"
+    t.string "phone"
     t.string "address"
     t.string "city"
     t.string "postalcode"
@@ -110,15 +110,16 @@ ActiveRecord::Schema.define(version: 20180329180054) do
     t.index ["province_id"], name: "index_orders_on_province_id"
   end
 
-  create_table "orders_products", id: false, force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "order_id", null: false
+  create_table "product_orders", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.decimal "price", precision: 12, scale: 3
     t.integer "quantity"
-    t.float "price"
+    t.decimal "total_price", precision: 12, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_orders_products_on_order_id"
-    t.index ["product_id"], name: "index_orders_products_on_product_id"
+    t.index ["order_id"], name: "index_product_orders_on_order_id"
+    t.index ["product_id"], name: "index_product_orders_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -151,7 +152,7 @@ ActiveRecord::Schema.define(version: 20180329180054) do
   end
 
   create_table "provinces", force: :cascade do |t|
-    t.string "code"
+    t.string "name"
     t.float "gst"
     t.float "pst"
     t.datetime "created_at", null: false

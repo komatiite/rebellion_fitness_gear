@@ -1,0 +1,12 @@
+<h1>View Your Cart</h1>
+
+<p>You have <%= session[:item_count] %> items in your cart.</p>
+
+<ul>
+  <%= session[:cart_list].each do |item| %>
+    <li><%= item[:product_id] %>, <%= item[:quantity] %></li>
+    <li>space</li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Clear Cart', clear_cart_path %></p>

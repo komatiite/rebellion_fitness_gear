@@ -6,14 +6,18 @@
   <h2>$<%= @product.price %></strike></h2>
 <% end %>
 
-
 <p><%= @product.description %></p>
-
-
 
 <% if @product.image.present? %>
   <p><%= image_tag @product.image.product_view.url %></p>
 <% end %>
+
+<%= form_for @product_order, remote: true do |f| %>
+  <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+<% end %>
+
 
 <h2>Specifications:</h2>
 

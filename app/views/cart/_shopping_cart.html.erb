@@ -1,0 +1,13 @@
+<% if @product_orders.size == 0 %>
+  <p>
+    There are no items in your shopping cart.
+  </p>
+<% else %>
+  <ul>
+    <% @product_orders.each do |item| %>
+      <%= render 'cart_row', product: item.product, item: item, show_total: true %>
+    <% end %>
+  </ul>
+
+  <p>Order Total: <%= number_to_currency @product_orders.sum('total_price') %></p>
+<% end %>

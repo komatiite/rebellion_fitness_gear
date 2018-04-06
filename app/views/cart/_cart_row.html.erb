@@ -1,0 +1,12 @@
+<li>
+  <%= form_for item, remote: true do |f| %>
+    <%= product.name %>,
+    quantity: <%= item.quantity %>,
+    price: <%= number_to_currency item.price %>,
+    total: <%= number_to_currency item.total_price %>
+    <%= f.number_field :quantity, value: item.quantity.to_i, min: 1 %>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <%= f.submit "Update Quantity" %>
+
+    <%= link_to "Delete", item, { data: { confirm: "Are you sure you wish to delete the product '#{item.product.name}' from your cart?" }, method: :delete, remote: true, } %></li>
+  <% end %>

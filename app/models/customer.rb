@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
   has_many :orders
-  belongs_to :province
+  belongs_to :province, optional: true
 
   validates :firstname, presence: true
   validates :lastname, presence: true
@@ -11,6 +11,6 @@ class Customer < ApplicationRecord
   validates :phone, numericality: { only_integer: true }
   validates :address, presence: true
   validates :city, presence: true
-  validates :province, presence: true
+  #validates :province, presence: true
   validates :postalcode, presence: true
 end
