@@ -15,4 +15,9 @@ class Product < ApplicationRecord
     return scoped unless search_term.present?
     where(['name LIKE ? OR description LIKE ?', "%#{search_term}%", "%#{search_term}%"])
   end
+
+  def self.category_search search_term, category_term
+    return scoped unless search_term.present?
+    where(['category_id = ? AND (name LIKE ? OR description LIKE ?)', "#{category_term}", "%#{search_term}%", "%#{search_term}%"])
+  end
 end

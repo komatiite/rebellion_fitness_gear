@@ -6,6 +6,7 @@
 <p>
   <%= form_tag product_search_path, method: :get do %>
     <%= text_field_tag :search_term, params[:search_term] %>
+    <%= collection_select :id, :category_term, Category.all, :id, :name, {:selected => session[:search_category]} %>
     <%= submit_tag "Search", name: nil %>
   <% end %>
 </p>
