@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+
+  get 'customer', to: 'customer#new', as: 'sign_up'
+  post 'customers', to: 'customer#create'
+  get 'customer/index', to: 'customer#index', as: 'login_page'
+  post 'customer/login', to: 'customer#login', as: 'login'
+  get 'customer/logout', to: 'customer#destroy', as: 'logout'
+
+  get 'checkout/index', to: 'checkout#index', as: 'checkout_page'
+  get 'checkout/invoice', to: 'checkout#invoice', as: 'invoice'
+
   get 'cart', to: 'cart#show', as: 'cart'
   resources :product_orders, only: [:create, :update, :destroy]
 

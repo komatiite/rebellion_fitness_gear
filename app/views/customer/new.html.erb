@@ -1,0 +1,16 @@
+<h1>New Customer Sign-up</h1>
+
+<p>Please fill out the following fields:</p>
+
+<%= form_for @customer do |f| %>
+  First Name: <%= f.text_field :firstname %><br />
+  Last Name: <%= f.text_field :lastname %><br />
+  Email: <%= f.text_field :email %><br />
+  Password: <%= f.text_field :password %><br />
+  Phone: <%= f.text_field :phone %><br />
+  Address: <%= f.text_field :address %><br />
+  City: <%= f.text_field :city %><br />
+  Province: <%= f.collection_select(:province_id, Province.all, :id, :name) %><br />
+  Postal Code: <%= f.text_field :postalcode %><br />
+  <%= f.submit "Sign up" %>
+<% end %>

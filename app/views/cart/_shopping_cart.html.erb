@@ -11,3 +11,5 @@
 
   <p>Order Total: <%= number_to_currency @product_orders.sum('total_price') %></p>
 <% end %>
+
+<p><%= link_to 'Checkout', checkout_page_path %></p>

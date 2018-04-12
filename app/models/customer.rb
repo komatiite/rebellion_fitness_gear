@@ -13,4 +13,5 @@ class Customer < ApplicationRecord
   validates :city, presence: true
   #validates :province, presence: true
   validates :postalcode, presence: true
+
 end
