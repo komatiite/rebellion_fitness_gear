@@ -63,3 +63,6 @@ gem "mini_magick"
 
 #Pagination
 gem 'kaminari'
+
+#Stripe checkout
+gem 'stripe'
