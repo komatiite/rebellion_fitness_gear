@@ -60,3 +60,6 @@ gem 'activeadmin'
 # Image functionality
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+
+#Pagination
+gem 'kaminari'
